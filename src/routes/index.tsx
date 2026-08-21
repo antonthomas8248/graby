@@ -102,7 +102,7 @@ const specs = [
   { label: "Capacity", value: "600 – 1320 products" },
   { label: "Payments", value: "UPI · GPay · Paytm · PhonePe" },
   { label: "Availability", value: "24 × 7, unattended" },
-  { label: "LED display", value: "2 × 43\" outdoor, 535 × 952 mm" },
+  { label: "LED panels", value: "2 × 43\" on left & right flanks" },
 ];
 
 const publicBenefits = [
@@ -151,14 +151,6 @@ const partnerBenefits = [
   },
 ];
 
-const timeline = [
-  { phase: "Phase 1", title: "Site survey", body: "Joint survey, exact placement, power and access finalised with the authority." },
-  { phase: "Phase 2", title: "Fabrication", body: "Machine procurement, branding, glass-and-steel structure and LED assembly." },
-  { phase: "Phase 3", title: "Installation", body: "On-site erection and commissioning, scheduled to minimise public disruption." },
-  { phase: "Phase 4", title: "Go live", body: "Stocking, payment testing, content loading and handover-ready operation." },
-  { phase: "Ongoing", title: "Operate & maintain", body: "Routine servicing, refills, cleaning, monitoring and periodic upgrades." },
-];
-
 function Home() {
   return (
     <div id="top" className="relative min-h-screen bg-background text-foreground">
@@ -170,7 +162,6 @@ function Home() {
       <Display />
       <Impact />
       <Partner />
-      <Roadmap />
       <Contact />
       <Footer />
       <Toaster />
@@ -481,36 +472,6 @@ function Partner() {
           </Reveal>
         ))}
       </div>
-    </Band>
-  );
-}
-
-function Roadmap() {
-  return (
-    <Band tone="raised">
-      <SectionHeading
-        label="Implementation"
-        title={
-          <>
-            From approval to <span className="text-gradient-mint">first sale</span>.
-          </>
-        }
-        intro="A phased rollout designed to keep public activity around the site undisturbed."
-      />
-
-      <ol className="mt-14 grid gap-px overflow-hidden rounded-[2rem] border border-border bg-border md:grid-cols-5">
-        {timeline.map((t, i) => (
-          <Reveal key={t.phase} delay={i * 90}>
-            <li className="flex h-full flex-col gap-3 bg-surface p-6">
-              <span className="font-display text-[11px] uppercase tracking-[0.24em] text-primary">
-                {t.phase}
-              </span>
-              <h3 className="font-display text-base font-semibold">{t.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{t.body}</p>
-            </li>
-          </Reveal>
-        ))}
-      </ol>
     </Band>
   );
 }
