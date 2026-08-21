@@ -20,11 +20,12 @@ import {
 import logo from "@/assets/graby-logo.png.asset.json";
 import heroImage from "@/assets/kiosk-hero.jpg";
 import touchscreenImage from "@/assets/touchscreen.jpg";
-import ledImage from "@/assets/led-display.jpg";
+import ledImage from "@/assets/led-unit.jpg";
 import streetImage from "@/assets/street-view.jpg";
 
 import { Nav } from "@/components/graby/nav";
 import { KioskDemo } from "@/components/graby/kiosk-demo";
+import { LedUnit } from "@/components/graby/led-unit";
 import { AdCalculator } from "@/components/graby/ad-calculator";
 import { ContactForm } from "@/components/graby/contact-form";
 import { Band, Reveal, SectionHeading, SectionLabel } from "@/components/graby/section";
@@ -363,26 +364,43 @@ function Display() {
         label="Digital display"
         title={
           <>
-            Two screens. Civic voice and
-            <span className="text-gradient-mint"> commercial reach</span>.
+            One machine, two screens
+            <span className="text-gradient-mint"> built into it</span>.
           </>
         }
-        intro="Each installation carries two 43-inch outdoor LED displays running roughly 18 hours a day. A defined share of airtime is always reserved, free of charge, for public-interest content — civic notices, awareness campaigns, tourism information and emergency alerts."
+        intro="The advertising screens are not separate structures. Two 43-inch outdoor LED panels are mounted on the machine itself — one on the left flank, one on the right — so the whole thing lands as a single unit on a Kerala street. They run roughly 18 hours a day, and a defined share of airtime is always reserved, free of charge, for public-interest content: civic notices, awareness campaigns, tourism information and emergency alerts."
       />
 
       <div className="mt-14 grid items-start gap-8 lg:grid-cols-2">
         <Reveal>
-          <img
-            src={ledImage}
-            alt="Two outdoor LED advertising displays glowing on a busy street"
-            width={1408}
-            height={1008}
-            loading="lazy"
-            className="w-full rounded-[2rem] border border-border object-cover shadow-[var(--shadow-card)]"
-          />
+          <LedUnit />
         </Reveal>
         <Reveal delay={120}>
           <AdCalculator />
+        </Reveal>
+      </div>
+
+      <div className="mt-8">
+        <Reveal>
+          <figure className="group relative overflow-hidden rounded-[2rem] border border-border shadow-[var(--shadow-card)]">
+          <img
+            src={ledImage}
+            alt="GraBy kiosk with two 43-inch LED advertising panels mounted on its left and right sides"
+            width={1408}
+            height={1008}
+            loading="lazy"
+            className="w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+          />
+            <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/70 to-transparent p-6 sm:p-8">
+              <p className="font-display text-base font-semibold sm:text-lg">
+                Left panel · vending bay · right panel — one structure
+              </p>
+              <p className="mt-1 max-w-xl text-sm text-muted-foreground">
+                Single footprint, single power point, single point of maintenance. Nothing extra to
+                install on the pavement.
+              </p>
+            </figcaption>
+          </figure>
         </Reveal>
       </div>
     </Band>
