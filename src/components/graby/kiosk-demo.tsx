@@ -1,19 +1,33 @@
 import { useEffect, useState } from "react";
-import { Check, Loader2, QrCode, RotateCcw } from "lucide-react";
+import {
+  Candy,
+  Check,
+  Coffee,
+  CookieIcon,
+  CupSoda,
+  Droplet,
+  Loader2,
+  type LucideIcon,
+  Nut,
+  QrCode,
+  RotateCcw,
+  Sandwich,
+  Zap,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Product = { id: string; name: string; price: number; emoji: string; slot: string };
+type Product = { id: string; name: string; price: number; icon: LucideIcon; slot: string };
 
 const products: Product[] = [
-  { id: "water", name: "Mineral Water", price: 20, emoji: "💧", slot: "A1" },
-  { id: "cola", name: "Soft Drink", price: 40, emoji: "🥤", slot: "A2" },
-  { id: "juice", name: "Fruit Juice", price: 35, emoji: "🧃", slot: "A3" },
-  { id: "energy", name: "Energy Drink", price: 99, emoji: "⚡", slot: "B1" },
-  { id: "chips", name: "Chips", price: 20, emoji: "🍟", slot: "B2" },
-  { id: "biscuit", name: "Biscuits", price: 10, emoji: "🍪", slot: "B3" },
-  { id: "choco", name: "Chocolate", price: 50, emoji: "🍫", slot: "C1" },
-  { id: "nuts", name: "Roasted Nuts", price: 30, emoji: "🥜", slot: "C2" },
-  { id: "coffee", name: "Cold Coffee", price: 45, emoji: "☕", slot: "C3" },
+  { id: "water", name: "Mineral Water", price: 20, icon: Droplet, slot: "A1" },
+  { id: "cola", name: "Soft Drink", price: 40, icon: CupSoda, slot: "A2" },
+  { id: "juice", name: "Fruit Juice", price: 35, icon: CupSoda, slot: "A3" },
+  { id: "energy", name: "Energy Drink", price: 99, icon: Zap, slot: "B1" },
+  { id: "chips", name: "Chips", price: 20, icon: Sandwich, slot: "B2" },
+  { id: "biscuit", name: "Biscuits", price: 10, icon: CookieIcon, slot: "B3" },
+  { id: "choco", name: "Chocolate", price: 50, icon: Candy, slot: "C1" },
+  { id: "nuts", name: "Roasted Nuts", price: 30, icon: Nut, slot: "C2" },
+  { id: "coffee", name: "Cold Coffee", price: 45, icon: Coffee, slot: "C3" },
 ];
 
 type Stage = "browse" | "pay" | "dispensing" | "done";
@@ -69,9 +83,7 @@ export function KioskDemo() {
                         : "border-border bg-secondary/60 hover:-translate-y-0.5 hover:border-primary/50",
                     )}
                   >
-                    <span className="text-xl leading-none transition-transform duration-300 group-hover:scale-110">
-                      {p.emoji}
-                    </span>
+                    <p.icon className="size-5 text-foreground transition-transform duration-300 group-hover:scale-110" />
                     <span className="text-[10px] leading-tight text-muted-foreground">{p.name}</span>
                     <span className="font-display text-[11px] font-semibold text-primary">₹{p.price}</span>
                   </button>
@@ -101,7 +113,9 @@ export function KioskDemo() {
 
           {stage === "dispensing" ? (
             <div className="flex flex-col items-center gap-3 py-8 text-center">
-              <span className="text-4xl animate-float">{selected?.emoji}</span>
+              {selected ? (
+                <selected.icon className="size-10 text-primary animate-float" />
+              ) : null}
               <p className="font-display text-sm font-medium">Dispensing from slot {selected?.slot}</p>
               <div className="h-1.5 w-40 overflow-hidden rounded-full bg-secondary">
                 <div className="h-full w-1/2 animate-marquee rounded-full bg-primary" />
