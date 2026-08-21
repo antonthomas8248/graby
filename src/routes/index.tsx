@@ -17,7 +17,7 @@ import {
   Wrench,
 } from "lucide-react";
 
-import logo from "@/assets/d.png";
+import logo from "@/assets/d-removebg-preview.png";
 import heroImage from "@/assets/kiosk-hero.jpg";
 import touchscreenImage from "@/assets/touchscreen.jpg";
 import ledImage from "@/assets/led-unit.jpg";

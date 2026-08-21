@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/d.png";
+import logo from "@/assets/d-removebg-preview.png";
 import { cn } from "@/lib/utils";
 
 const links = [
