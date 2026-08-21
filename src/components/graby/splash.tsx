@@ -23,9 +23,7 @@ export function Splash() {
         fading ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
     >
-      <span className="inline-flex items-center rounded-2xl bg-logo-plate px-5 py-4 animate-splash-glow animate-logo-in">
-        <img src={logo} alt="GraBy" className="h-16 w-auto object-contain" />
-      </span>
+      <img src={logo} alt="GraBy" className="h-16 w-auto object-contain animate-splash-glow animate-logo-in" />
     </div>
   );
 }

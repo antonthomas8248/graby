@@ -32,9 +32,12 @@ export function Nav() {
       )}
     >
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center">
+        <a href="#top" className="flex items-center gap-3">
           <span className="inline-flex items-center rounded-xl bg-logo-plate px-2 py-1.5 animate-logo-in">
             <img src={logo} alt="GraBy" className="h-10 w-auto object-contain" />
+          </span>
+          <span className="font-display text-lg font-semibold tracking-tight">
+            Gra<span className="text-primary">By</span>
           </span>
         </a>
 
