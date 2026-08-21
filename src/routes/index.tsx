@@ -543,7 +543,9 @@ function Footer() {
     <footer className="border-t border-border bg-surface/40 px-6 py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="GraBy" className="h-16 w-auto object-contain" />
+          <span className="inline-flex items-center rounded-xl bg-logo-plate px-2.5 py-2">
+            <img src={logo} alt="GraBy" className="h-11 w-auto object-contain" />
+          </span>
           <p className="text-xs text-muted-foreground">Smart Vending Solution</p>
         </div>
 
