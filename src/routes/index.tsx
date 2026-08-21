@@ -179,7 +179,7 @@ function Home() {
 
 function Hero() {
   return (
-    <section className="relative min-h-[92vh] w-full overflow-hidden px-6 pb-20 pt-32 md:pt-40">
+    <section className="relative w-full overflow-hidden px-6 pb-24 pt-32 md:pb-32 md:pt-40">
       <img
         src={heroImage}
         alt="GraBy smart vending kiosk with glowing LED displays at night"
