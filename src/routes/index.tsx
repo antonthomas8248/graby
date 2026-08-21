@@ -543,8 +543,8 @@ function Footer() {
     <footer className="border-t border-border bg-surface/40 px-6 py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <div className="flex items-center gap-3">
-          <span className="grid size-11 place-items-center rounded-xl bg-logo-plate p-1">
-            <img src={logo} alt="GraBy logo" width={44} height={44} className="size-full object-contain" />
+          <span className="grid size-14 place-items-center rounded-xl bg-logo-plate p-1.5">
+            <img src={logo} alt="GraBy logo" width={56} height={56} className="size-full object-contain" />
           </span>
           <div>
             <p className="font-display text-base font-semibold">
