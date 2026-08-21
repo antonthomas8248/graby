@@ -33,7 +33,7 @@ export function Nav() {
     >
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-xl bg-secondary p-1.5">
+          <span className="grid size-10 place-items-center rounded-xl bg-logo-plate p-1">
             <img src={logo.url} alt="GraBy logo" width={40} height={40} className="size-full object-contain" />
           </span>
           <span className="font-display text-lg font-semibold tracking-tight">
